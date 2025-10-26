@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-dark-900 text-white font-sans;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a2e 75%, #0f0f23 100%);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .neon-glow-blue {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  
+  .neon-glow-purple {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+  
+  .neon-glow-pink {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  }
+  
+  .neon-glow-cyan {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  }
+  
+  .neon-glow-emerald {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-secondary {
+    @apply bg-gradient-to-r from-cyan-400 via-emerald-500 to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg-primary {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+  
+  .gradient-bg-secondary {
+    @apply bg-gradient-to-r from-pink-500 to-orange-500;
+  }
+  
+  .gradient-bg-accent {
+    @apply bg-gradient-to-r from-cyan-500 to-emerald-500;
+  }
+  
+  /* Responsive utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-heading {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .mobile-button {
+    @apply px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base;
+  }
+  
+  /* Touch-friendly sizing for mobile */
+  @media (max-width: 640px) {
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}

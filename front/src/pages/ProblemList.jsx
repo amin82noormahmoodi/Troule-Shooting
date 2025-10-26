@@ -22,9 +22,11 @@ const ProblemList = () => {
       const data = await apiService.getProblems(boardId);
       setProblems(data);
       
-      // Get board name from the first problem or set a default
-      if (data.length > 0) {
-        setBoardName(`Board ${boardId}`);
+      // Get board name from API
+      const boards = await apiService.getBoards();
+      const board = boards.find(b => b.id === parseInt(boardId));
+      if (board) {
+        setBoardName(board.name);
       } else {
         setBoardName(`Board ${boardId}`);
       }
@@ -101,11 +103,8 @@ const ProblemList = () => {
                 
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-orange-300 transition-colors">
-                    Problem #{problem.id}
+                    Problem: {problem.problem_text}
                   </h3>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed text-sm sm:text-base">
-                    {problem.problem_text}
-                  </p>
                 </div>
                 
                 <motion.div

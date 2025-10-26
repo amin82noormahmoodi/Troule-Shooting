@@ -89,7 +89,7 @@ const SolutionList = () => {
               </motion.div>
               
               <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 group-hover:text-emerald-300 transition-colors">
-                Solution #{solution.id}
+                Solution {index + 1}
               </h3>
               
               <p className="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed text-sm sm:text-base">
